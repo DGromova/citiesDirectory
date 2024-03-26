@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.model.City;
+import org.example.builder.CityBuilder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +11,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
+
+        //Save the cities from the file and output them in the console
+
         List<City> citiesDirectory = new ArrayList<>();
+
         try (Scanner cityDirectoryScanner = new Scanner(new File("src/main/resources/Задача ВС Java Сбер.csv"))) {
             while (cityDirectoryScanner.hasNextLine()) {
                 citiesDirectory.add(getCityFromLine(cityDirectoryScanner.nextLine()));
@@ -18,6 +23,23 @@ public class Main {
         } catch (FileNotFoundException ex) {
             throw new FileNotFoundException();
         }
+
+        System.out.println();
+        System.out.println("_______________________________________________________________________________________________________________________________________");
+        System.out.println();
+
+        //Output the directory of cities sorted by city name to the console
+        System.out.println("Directory of cities, sorted by city name:");
+        CityBuilder.sortByName(citiesDirectory);
+
+        System.out.println();
+        System.out.println("_______________________________________________________________________________________________________________________________________");
+        System.out.println();
+
+        //Output the directory of cities sorted by city name and district to the console
+        System.out.println("Directory of cities, sorted by district and city name:");
+        CityBuilder.sortByDistrictAndName(citiesDirectory);
+
     }
 
     private static City getCityFromLine(String line) {
