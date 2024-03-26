@@ -30,14 +30,15 @@ public class CityBuilder {
 
         int max = 0;
         int index = 0;
-        for (City city : cityArr) {
-            if (max < city.getPopulation()) {
-                max = city.getPopulation();
+        for (int i = 0; i < cityArr.length; i++) {
+            if (max < cityArr[i].getPopulation()) {
+                max = cityArr[i].getPopulation();
             }
-            if (max == city.getPopulation()) {
-                index = city.getId();
+            if (max == cityArr[i].getPopulation()) {
+                index = i;
             }
         }
+
         System.out.println("[" + index + "]" + " = " + max);
     }
 

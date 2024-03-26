@@ -41,8 +41,6 @@ public class Main {
         CityBuilder.sortByDistrictAndName(citiesDirectory);
 
         System.out.println();
-        System.out.println("_______________________________________________________________________________________________________________________________________");
-        System.out.println();
 
         //Output the index of the element and the largest population of the city.
         System.out.println("Index of the element and the largest population of the city:");
