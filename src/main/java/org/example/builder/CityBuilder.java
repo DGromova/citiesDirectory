@@ -43,7 +43,7 @@ public class CityBuilder {
     public static void getNumberOfCitiesByRegion(List<City> list) {
         list.stream()
                 .collect(Collectors.groupingBy(City::getRegion, Collectors.counting()))
-                .forEach((k, v) -> System.out.println("\u2022 " + k + " = " + v));
+                .forEach((k, v) -> System.out.println("\u2022 " + k + " – " + v));
     }
 
 }
