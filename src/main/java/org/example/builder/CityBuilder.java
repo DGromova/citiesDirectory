@@ -1,11 +1,10 @@
 package org.example.builder;
 
 import org.example.model.City;
-
-import javax.print.DocFlavor;
-import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CityBuilder {
@@ -38,8 +37,13 @@ public class CityBuilder {
                 index = i;
             }
         }
-
         System.out.println("[" + index + "]" + " = " + max);
+    }
+
+    public static void getNumberOfCitiesByRegion(List<City> list) {
+        list.stream()
+                .collect(Collectors.groupingBy(City::getRegion, Collectors.counting()))
+                .forEach((k, v) -> System.out.println("\u2022 " + k + " = " + v));
     }
 
 }

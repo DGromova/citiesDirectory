@@ -46,6 +46,12 @@ public class Main {
         System.out.println("Index of the element and the largest population of the city:");
         CityBuilder.findIndexAndLargestPopulation(citiesDirectory);
 
+        System.out.println();
+
+        //Output the number of cities by region
+        System.out.println("The number of cities by region:");
+        CityBuilder.getNumberOfCitiesByRegion(citiesDirectory);
+
     }
 
     private static City getCityFromLine(String line) {
